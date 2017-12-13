@@ -8,7 +8,7 @@ ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/loca
 RUN chmod a+x /usr/local/bin/jq
 
 RUN cat /etc/resolv.conf
-RUN ping 192.168.1.1
+RUN ping -c 3 192.168.1.1
 RUN nslookup registry.npmjs.org
 
 RUN npm install
