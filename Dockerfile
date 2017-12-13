@@ -7,7 +7,8 @@ WORKDIR /StoreWebApp
 ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/local/bin/jq
 RUN chmod a+x /usr/local/bin/jq
 
-RUN ping registry.npmjs.org
+RUN host registry.npmjs.org
+RUN ping 151.101.56.162
 RUN npm config set proxy http://[Host]:[Port] && npm config set https-proxy http://[Host]:[Port] && npm install
 RUN npm -g install bower
 RUN bower --allow-root install --force
