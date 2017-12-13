@@ -7,7 +7,6 @@ WORKDIR /StoreWebApp
 ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/local/bin/jq
 RUN chmod a+x /usr/local/bin/jq
 
-RUN npm config set registry https://registry.npmjs.org/
 RUN npm config set proxy http://[Host]:[Port]
 RUN npm config set https-proxy http://[Host]:[Port]
 RUN npm install
