@@ -9,7 +9,7 @@ RUN chmod a+x /usr/local/bin/jq
 
 RUN cat /etc/resolv.conf
 RUN ping -c 3 192.168.1.1
-RUN nslookup registry.npmjs.org
+RUN ping -c 3 registry.npmjs.org
 
 RUN npm install
 RUN npm -g install bower
